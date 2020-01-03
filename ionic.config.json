@@ -1,6 +1,8 @@
 {
   "name": "ThePathToIonic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "3b95ed6b"
 }

@@ -1,0 +1,62 @@
+.container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 75%;
+    margin: 0 auto;
+    z-index: 2;
+
+    &.top {
+        top: 5%;
+    }
+
+    &.bottom {
+        bottom: 30%;
+
+        span {
+            color: #fff;
+        }
+    }
+}
+
+ion-slides {
+    height: 100%;
+
+    .slide-inner {
+        width: 100%;
+        color: #fff;
+        background-color: #0090fa;
+        border-radius: 10px;
+
+        ion-item {
+            --background: rgba(255, 255, 255, 0.2);
+            --border-radius: 10px;
+
+            ion-input {
+                --color: #fff;
+            }
+        }
+    }
+}
+
+.logo {
+    width: 40vw;
+    height: 40vw;
+    background-size: contain;
+    border: 0;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.marginTop {
+    margin-top: 10%;
+}
+
+.marginTopBottom {
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
