@@ -27,15 +27,15 @@ import { File } from '@ionic-native/file/ngx';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireStorageModule,
-    Camera,
-    File
+    AngularFireStorageModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Keyboard
+    Keyboard,
+    Camera,
+    File
   ],
   bootstrap: [AppComponent]
 })
