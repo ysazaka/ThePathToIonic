@@ -1,3 +1,36 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane>
+    <ion-menu contentId="content" type="overlay">
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>The Path to Ionic</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item lines="none" routerLink="/xp">
+              <ion-icon name="book" slot="start"></ion-icon>
+              <ion-label>Ganhe mais XP!</ion-label>
+            </ion-item>
+            <ion-item lines="none" routerLink="/user-data">
+              <ion-icon name="contact" slot="start"></ion-icon>
+              <ion-label>Seus dados</ion-label>
+            </ion-item>
+            <ion-item lines="none" routerLink="/achievement">
+              <ion-icon name="star" slot="start"></ion-icon>
+              <ion-label>Conquistas</ion-label>
+            </ion-item>
+            <ion-item lines="none" (click)="onLogout()" button>
+              <ion-icon name="exit" slot="start"></ion-icon>
+              <ion-label>Desconectar</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-router-outlet id="content" main></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>
