@@ -1,9 +1,31 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Conteúdo</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="xp"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ chapter.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <h1>Teste Content Top</h1>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="chapter.name" placeholder="Título"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="chapter.picture" placeholder="Foto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea [(ngModel)]="chapter.description" placeholder="Descrição" rows="7"></ion-textarea>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar class="default-padding">
+    <ion-button (click)="saveProduct()" expand="block">
+      Salvar produto
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
