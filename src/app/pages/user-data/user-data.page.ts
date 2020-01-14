@@ -5,6 +5,7 @@ import { File } from '@ionic-native/file/ngx';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user-data',
@@ -15,14 +16,19 @@ export class UserDataPage implements OnInit {
   public uploadPercent: Observable<number>;
   public downloadUrl: Observable<string>;
 
+  email = "";
+
   constructor(
+    private authService: AuthService,
     private camera: Camera,
     private platform: Platform,
     private file: File,
     private afStorage: AngularFireStorage
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.email = this.authService.getAuth().currentUser.email;
+  }
 
   async openGallery() {
     const options: CameraOptions = {

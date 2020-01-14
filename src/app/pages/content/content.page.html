@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-list>
+  <ion-list *ngIf="isAdmin">
     <ion-item>
       <ion-input type="text" [(ngModel)]="chapter.name" placeholder="Título"></ion-input>
     </ion-item>
@@ -20,9 +20,13 @@
     </ion-item>
   </ion-list>
 
+  <ion-img [src]="chapter.picture" ngDefaultControl class="default-margin-top-bottom"></ion-img>
+  <ion-text class="default-margin-top-bottom">
+    {{ chapter.description }}
+  </ion-text>
 </ion-content>
 
-<ion-footer>
+<ion-footer *ngIf="isAdmin">
   <ion-toolbar class="default-padding">
     <ion-button (click)="saveProduct()" expand="block">
       Salvar produto

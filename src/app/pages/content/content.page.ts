@@ -17,6 +17,8 @@ export class ContentPage implements OnInit {
   private loading: any;
   private chapterSubscription: Subscription;
 
+  isAdmin = false;
+
   constructor(
     private chapterService: ChapterService,
     private activatedRoute: ActivatedRoute,
@@ -39,6 +41,10 @@ export class ContentPage implements OnInit {
   loadChapter() {
     this.chapterSubscription = this.chapterService.getChapter(this.chapterId).subscribe(data => {
       this.chapter = data;
+      if(this.authService.getAuth().currentUser.uid === 'KWQdyeuUF9gAtDdEURjvG4jt1I73')
+        this.isAdmin = true;
+      else
+        this.isAdmin = false;
     });
   }
 
