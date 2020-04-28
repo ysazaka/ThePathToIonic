@@ -8,8 +8,25 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+  <!-- <ion-img [src]="downloadUrl | async" *ngIf="downloadUrl | asnyc" ngDefaultControl 
+  class="default-margin-top-bottom default-img center"></ion-img> -->
   <ion-img src="https://avatars2.githubusercontent.com/u/38089704?s=460&v=4" ngDefaultControl 
   class="default-margin-top-bottom default-img center"></ion-img>
+  
+  <ion-grid>
+    <ion-row class="ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <ion-button class="ion-margin-top" (click)="openGallery()" color="primary">
+          Subir nova foto de perfil
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  <ion-item>
+    <ion-label>Progresso do upload: {{uploadPercent | async}}%</ion-label>
+  </ion-item>
+  
   <ion-text class="margin-top-bottom center" >
     {{ email }}
   </ion-text>

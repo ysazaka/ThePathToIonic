@@ -16,7 +16,7 @@ export class UserDataPage implements OnInit {
   public uploadPercent: Observable<number>;
   public downloadUrl: Observable<string>;
 
-  email = "";
+  public email = "";
 
   constructor(
     private authService: AuthService,

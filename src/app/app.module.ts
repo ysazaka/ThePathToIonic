@@ -27,7 +27,7 @@ import { File } from '@ionic-native/file/ngx';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule  
   ],
   providers: [
     StatusBar,
