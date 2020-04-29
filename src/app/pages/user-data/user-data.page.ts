@@ -61,7 +61,7 @@ export class UserDataPage implements OnInit {
   }
 
   uploadPicture(blob: Blob) {
-    const ref = this.afStorage.ref('photo/ionic.jpg');
+    const ref = this.afStorage.ref('photo/' + this.email + '.jpg');
     const task = ref.put(blob);
 
     this.uploadPercent = task.percentageChanges();
