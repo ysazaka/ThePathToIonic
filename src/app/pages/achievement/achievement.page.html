@@ -26,8 +26,8 @@
     </ion-row>
 
     <ion-row class="ion-align-items-center ion-margin-top">
-      <ion-virtual-scroll [items]="medals" approxItemHeight="320px">
-        <ion-card *virtualItem="let medal; let itemBounds = bounds;">
+      <ion-virtual-scroll [items]="medals" approxItemHeight="100px">
+        <ion-card *virtualItem="let medal" class="col-33">
           <div>
             <ion-img [src]="medal.imgSrc" [alt]="medal.name"></ion-img>
           </div>

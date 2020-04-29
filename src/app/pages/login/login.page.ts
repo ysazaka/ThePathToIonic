@@ -81,7 +81,9 @@ export class LoginPage implements OnInit {
       this.presentToast(message);
     } finally {
       this.loading.dismiss();
-      this.menu.enable(true, 'custom');
+      if(this.authService.getAuth().currentUser != null) {
+        this.menu.enable(true, 'custom');
+      }
     }
   }
 
